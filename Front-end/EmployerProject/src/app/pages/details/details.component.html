@@ -1,0 +1,64 @@
+<mat-card>
+	<div>
+		<h1>Detalhes do Funcionário</h1>
+	</div>
+
+	<div *ngIf="employee">
+		<form>
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Nome:</mat-label>
+					<input matInput type="text" value="{{employee.name}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Sobrenome:</mat-label>
+					<input matInput type="text" value="{{employee.lastName}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Departamento</mat-label>
+					<input matInput type="text" value="{{employee.department}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Turno:</mat-label>
+					<input matInput type="text" value="{{employee.workShift}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Situação:</mat-label>
+					<input matInput type="text" value="{{employee.active === true? 'Ativo':'Inativo'}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Data de Criação:</mat-label>
+					<input matInput type="text" value="{{employee.createdAt}}" disabled>
+				</mat-form-field>
+			</div>
+
+			<div class="input-box">
+				<mat-form-field>
+					<mat-label for="">Data da última atualização:</mat-label>
+					<input matInput type="text" value="{{employee.lastModifiedAt}}" disabled>
+
+				</mat-form-field>
+			</div>
+
+			<div class="btn-box">
+				<button mat-raised-button color="warn" (click)="inactivateEmployee()">Inativar</button>
+				<button mat-raised-button [routerLink]="['/home']">Voltar</button>
+			</div>
+		</form>
+	</div>
+</mat-card>

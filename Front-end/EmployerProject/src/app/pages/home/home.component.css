@@ -1,0 +1,13 @@
+.funcionario-box {
+	width: 100%;
+	gap: 15px;
+	flex-direction: column;
+	display: flex;
+	justify-content: space-evenly;
+	align-items:left;
+	margin-top: 2rem;
+}
+
+.mat-mdc-button-base {
+	margin: 8px 8px 0 0;
+}

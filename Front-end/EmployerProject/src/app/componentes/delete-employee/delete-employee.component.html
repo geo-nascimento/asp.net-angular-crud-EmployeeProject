@@ -1,0 +1,17 @@
+<mat-card>
+	<div *ngIf="employee">
+		<h1>Confirma a exclusão</h1>
+		<div>
+			<h2 style="font-weight: bold;">Funcionário:</h2>
+			<p>{{employee.name}} {{employee.lastName}}</p>
+
+			<h2 style="font-weight: bold;">Departamento:</h2>
+			<p>{{employee.department}}</p>
+		</div>
+
+		<div>
+			<button mat-raised-button color="warn" (click)="deleteEmployee()">Confirmar</button>
+			<button mat-raised-button (click)="cancel()">Voltar</button>
+		</div>
+	</div>
+</mat-card>

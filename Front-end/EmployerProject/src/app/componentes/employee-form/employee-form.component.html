@@ -1,0 +1,51 @@
+<mat-card>
+	<h1>{{btnTitulo}}</h1>
+
+	<form [formGroup]="employeeForm" (ngSubmit)="submit()" #fomrDir="ngForm">
+
+		<input type="hidden" formControlName="id">
+
+		<div class="input-box">
+			<mat-form-field>
+				<mat-label>Nome:</mat-label>
+				<input matInput type="text" formControlName="name" placeholder="Insira o nome!" required>
+			</mat-form-field>
+		</div>
+
+		<div class="input-box">
+			<mat-form-field>
+				<mat-label>Sobrenome:</mat-label>
+				<input matInput type="text" formControlName="lastname" placeholder="Insira o sobrenome!" required>
+			</mat-form-field>
+		</div>
+
+		<div class="input-box">
+			<mat-form-field>
+				<mat-label>Departamento:</mat-label>
+				<mat-select id="departamento" formControlName="department" required matNativeControl>
+					<mat-option value="RH">RH</mat-option>
+					<mat-option value="Financeiro">Financeiro</mat-option>
+					<mat-option value="Compras">Compras</mat-option>
+					<mat-option value="Atendimento">Atendimento</mat-option>
+					<mat-option value="Zeladoria">Zeladoria</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<div class="input-box">
+			<mat-form-field>
+				<mat-label>Turno</mat-label>
+				<mat-select id="turno" formControlName="workshift">
+					<mat-option value="Manha">Manhã</mat-option>
+					<mat-option value="Tarde">Tarde</mat-option>
+					<mat-option value="Noite">Noite</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<div class="btn-box">
+			<button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid">{{btnAcao}}</button>
+			<button mat-raised-button [routerLink]="['/home']">Voltar</button>
+		</div>
+	</form>
+</mat-card>
